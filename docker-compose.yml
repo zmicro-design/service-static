@@ -1,0 +1,14 @@
+version: '3.7'
+
+services:
+  workspace:
+    restart: always
+    build:
+      context: ./image
+    volumes:
+      - ${SERVICE_STATIC_DIR}:/usr/share/www/html
+
+networks:
+  default:
+    external: true
+    name: compose-ingress
